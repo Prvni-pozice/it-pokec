@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT pokec | Neformálně o IT</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.3/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    /* Parallax effect */
+    .parallax {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    /* Fade/slide-in effects */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: none;
+    }
+    .slide-in-right {
+      opacity: 0;
+      transform: translateX(100px);
+      transition: all 1s;
+    }
+    .slide-in-right.visible {
+      opacity: 1;
+      transform: none;
+    }
+    .slide-in-left {
+      opacity: 0;
+      transform: translateX(-100px);
+      transition: all 1s;
+    }
+    .slide-in-left.visible {
+      opacity: 1;
+      transform: none;
+    }
+  </style>
+</head>
+<body class="bg-black text-white font-sans">
+
+  <!-- Hlavní Hero sekce -->
+  <header class="bg-black text-center py-20">
+    <h1 class="text-6xl font-bold bg-gradient-to-r from-lime-400 to-green-600 bg-clip-text text-transparent">IT pokec 🎙️</h1>
+    <p class="text-2xl mt-4 opacity-80">Neformálně o formálních technologiích</p>
+  </header>
+
+  <!-- První atraktivní obrázek - Parallax -->
+  <section class="h-96 parallax" style="background-image: url('https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1400&q=80');"></section>
+
+  <!-- Výhody podcastu s animací -->
+  <section class="container mx-auto my-20 px-4 fade-in">
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80" alt="Studio podcastu" class="rounded-3xl shadow-2xl hover:scale-105 transition duration-500">
+      <div>
+        <h2 class="text-4xl font-semibold mb-6">Proč poslouchat IT pokec?</h2>
+        <ul class="text-lg space-y-3">
+          <li>✅ <strong>Praktické rady</strong> pro IT manažery i vývojáře.</li>
+          <li>✅ Žádný nudný prodej, <strong>jen hodnotné informace</strong>.</li>
+          <li>✅ <strong>Neformální styl</strong>, kterému porozumí každý.</li>
+          <li>✅ Mix krátkých novinek a hlubších diskusí.</li>
+          <li>✅ Zkušenosti lidí, kteří reálně vedou IT firmy.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Druhý obrázek, slide-in zleva -->
+  <section class="my-20 px-4 slide-in-left">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
+      <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=900&q=80" alt="Tým v podcastovém studiu" class="w-full md:w-1/2 rounded-3xl shadow-xl">
+      <div class="md:w-1/2">
+        <h2 class="text-3xl font-semibold mb-4">Rozhovory, které inspirují</h2>
+        <p class="text-lg opacity-80">Opravdové příběhy lidí, kteří žijí IT. Otevřené diskuze o reálných projektech, úspěších i fuckupech. Uč se s námi od těch nejlepších.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Parallax efekt - mikrofon -->
+  <section class="h-96 parallax" style="background-image: url('https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=1400&q=80');"></section>
+
+  <!-- Slide-in zprava: Poslouchej nás -->
+  <section class="my-20 px-4 slide-in-right">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row-reverse items-center gap-10">
+      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80" alt="Podcast - poslech" class="w-full md:w-1/2 rounded-3xl shadow-xl">
+      <div class="md:w-1/2">
+        <h2 class="text-3xl font-semibold mb-4">Poslouchej kdekoliv, kdykoliv</h2>
+        <div class="flex flex-wrap gap-6 mt-6">
+          <a href="#" class="bg-lime-400 text-black py-3 px-8 rounded-full font-semibold shadow-xl hover:scale-110 transition">Spotify</a>
+          <a href="#" class="bg-lime-400 text-black py-3 px-8 rounded-full font-semibold shadow-xl hover:scale-110 transition">Apple Podcasts</a>
+          <a href="#" class="bg-lime-400 text-black py-3 px-8 rounded-full font-semibold shadow-xl hover:scale-110 transition">YouTube</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Třetí parallax background -->
+  <section class="h-96 parallax" style="background-image: url('https://images.unsplash.com/photo-1525186402429-1001603aa8b5?auto=format&fit=crop&w=1400&q=80');"></section>
+
+  <footer class="py-10 text-center opacity-70">
+    <p>© 2025 IT pokec | Všechna práva vyhrazena</p>
+  </footer>
+
+  <!-- Animace při scrollu -->
+  <script>
+    // Helper to reveal elements with fade-in/slide-in effect
+    function revealOnScroll() {
+      document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(function(el) {
+        var rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          el.classList.add('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('DOMContentLoaded', revealOnScroll);
+  </script>
+</body>
+</html>
